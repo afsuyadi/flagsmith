@@ -53,7 +53,11 @@ export const DeleteOrganisation = ({
           data-test='delete-org-btn'
           onClick={handleDelete}
           theme='danger'
-          disabled={isLoading}
+          disabled={
+            isLoading ||
+            (organisation.subscription.plan !== null &&
+              organisation.subscription.cancellation_date === null)
+          }
         >
           {isLoading ? 'Deleting...' : 'Delete Organisation'}
         </Button>
