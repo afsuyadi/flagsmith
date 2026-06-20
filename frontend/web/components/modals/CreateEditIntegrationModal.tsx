@@ -113,6 +113,7 @@ const CreateEditIntegration: FC<CreateEditIntegrationProps> = (props) => {
     () => data || buildDefaultFormData(),
   )
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [customUrlFields, setCustomUrlFields] = useState<Set<string>>(new Set())
   const [error, setError] = useState<string | null>(null)
   const [authorised, setAuthorised] = useState<boolean>(false)
   const [selectedProjectId, setSelectedProjectId] = useState<
@@ -351,17 +352,36 @@ const CreateEditIntegration: FC<CreateEditIntegrationProps> = (props) => {
     const selected = options.find(
       (v: IntegrationFieldOption) => v.value === formData[field.key],
     )
+    const isCustomUrl =
+      customUrlFields.has(field.key) ||
+      (!!formData[field.key] &&
+        !options.find((o) => o.value === formData[field.key]))
     return (
       <div className='full-width mb-2'>
         <Select
-          onChange={(v: { value: string }) => update(field.key, v.value)}
+          onChange={(v: { value: string }) => {
+            if (v.value === 'custom') {
+              setCustomUrlFields((prev) => new Set(prev).add(field.key))
+              update(field.key, '')
+            } else {
+              setCustomUrlFields((prev) => {
+                const next = new Set(prev)
+                next.delete(field.key)
+                return next
+              })
+              update(field.key, v.value)
+            }
+          }}
           options={options}
           value={
-            selected
+            isCustomUrl
+              ? { label: 'Custom URL', value: 'custom' }
+              : selected
               ? { label: selected.label, value: selected.value }
               : { label: 'Please select' }
           }
         />
+        {isCustomUrl && <div className='mt-2'>{renderFieldInput(field)}</div>}
       </div>
     )
   }
