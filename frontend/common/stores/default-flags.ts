@@ -12,6 +12,11 @@ const defaultFlags = {
         {
           'key': 'base_url',
           'label': 'Base URL',
+          'options': [
+            { 'label': 'US', 'value': 'https://api2.amplitude.com' },
+            { 'label': 'EU', 'value': 'https://api.eu.amplitude.com' },
+            { 'label': 'Custom URL', 'value': 'custom' },
+          ],
         },
       ],
       'image': '/static/images/integrations/amplitude.svg',
@@ -45,6 +50,15 @@ const defaultFlags = {
         {
           'key': 'base_url',
           'label': 'Base URL',
+          'options': [
+            { 'label': 'US1', 'value': 'https://api.datadoghw.com' },
+            { 'label': 'US3', 'value': 'https://us3.datadoghq.com' },
+            { 'label': 'US5', 'value': 'https://us5.datadoghq.com' },
+            { 'label': 'EU1', 'value': 'https://app.datadoghq.eu' },
+            { 'label': 'US1-FED', 'value': 'https://app.ddog-gov.com' },
+            { 'label': 'AP1', 'value': 'https://ap1.datadoghq.com' },
+            { 'label': 'Custom URL', 'value': 'custom' },
+          ],
         },
         {
           'hidden': true,
@@ -141,6 +155,15 @@ const defaultFlags = {
       'docs': 'https://docs.flagsmith.com/integrations/analytics/heap',
       'fields': [
         {
+          'key': 'base_url',
+          'label': 'Base URL',
+          'options': [
+            { 'label': 'US', 'value': 'https://heapanalytics.com' },
+            { 'label': 'EU', 'value': 'https://heapanalytics.eu' },
+            { 'label': 'Custom URL', 'value': 'custom' },
+          ],
+        },
+        {
           'hidden': true,
           'key': 'api_key',
           'label': 'API Key',
@@ -164,6 +187,16 @@ const defaultFlags = {
       'docs': 'https://docs.flagsmith.com/integrations/analytics/mixpanel',
       'fields': [
         {
+          'key': 'base_url',
+          'label': 'Base URL',
+          'options': [
+            { 'label': 'US', 'value': 'https://api.mixpanel.com' },
+            { 'label': 'EU', 'value': 'https://api-eu.mixpanel.com' },
+            { 'label': 'IN', 'value': 'https://api-in.mixpanel.com' },
+            { 'label': 'Custom URL', 'value': 'custom' },
+          ],
+        },
+        {
           'hidden': true,
           'key': 'api_key',
           'label': 'Project Token',
@@ -181,12 +214,23 @@ const defaultFlags = {
       'fields': [
         {
           'key': 'base_url',
-          'label': 'New Relic Base URL',
+          'label': 'Base URL',
+          'options': [
+            {
+              'label': 'US',
+              'value': 'https://insights-collector.newrelic.com',
+            },
+            {
+              'label': 'EU',
+              'value': 'https://insights-collector.eu01.nr-data.net',
+            },
+            { 'label': 'Custom URL', 'value': 'custom' },
+          ],
         },
         {
           'hidden': true,
           'key': 'api_key',
-          'label': 'New Relic API Key',
+          'label': 'API Key',
         },
         {
           'key': 'app_id',
