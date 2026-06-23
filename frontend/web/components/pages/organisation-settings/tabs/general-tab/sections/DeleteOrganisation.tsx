@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { planNames } from 'common/utils/utils'
 import { Organisation } from 'common/types/responses'
 import { useDeleteOrganisationWithToast } from 'components/pages/organisation-settings/hooks'
 import ConfirmRemoveOrganisation from 'components/modals/ConfirmRemoveOrganisation'
@@ -55,8 +56,9 @@ export const DeleteOrganisation = ({
           theme='danger'
           disabled={
             isLoading ||
-            (organisation.subscription.plan !== null &&
-              organisation.subscription.cancellation_date === null)
+            (Utils.getPlanName(organisation.subscription?.plan ?? '') !==
+              planNames.free &&
+              !organisation.subscription?.cancellation_date)
           }
         >
           {isLoading ? 'Deleting...' : 'Delete Organisation'}
