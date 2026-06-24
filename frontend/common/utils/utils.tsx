@@ -816,7 +816,7 @@ const Utils = Object.assign({}, BaseUtils, {
     }
 
     if (operatorObj?.value?.toLowerCase?.().includes('semver')) {
-      if (rule.value == null) {
+      if (!rule.value) {
         return false
       }
       return !!semver.valid(`${rule.value.split(':')[0]}`)
@@ -829,7 +829,7 @@ const Utils = Object.assign({}, BaseUtils, {
       }
       case 'REGEX': {
         try {
-          if (rule.value == null) {
+          if (!rule.value) {
             throw new Error('')
           }
           new RegExp(`${rule.value}`)
@@ -839,7 +839,7 @@ const Utils = Object.assign({}, BaseUtils, {
         }
       }
       case 'MODULO': {
-        if (rule.value == null) {
+        if (!rule.value) {
           return false
         }
         const valueSplit = rule.value.split('|')
