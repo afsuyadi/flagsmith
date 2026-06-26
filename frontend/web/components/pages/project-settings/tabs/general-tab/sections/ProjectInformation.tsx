@@ -113,7 +113,7 @@ export const ProjectInformation = ({ project }: ProjectInformationProps) => {
           </div>
         )}
 
-        <div className='text-right'>
+        <div className='text-right mt-4'>
           <Button
             type='submit'
             id='save-proj-btn'
