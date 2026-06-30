@@ -50,7 +50,7 @@ overrides = [
     { name = "django-extensions", specifier = "==3.2.3" },
     { name = "django-filter", specifier = "==2.4.0" },
     { name = "django-health-check", specifier = "==3.18.2" },
-    { name = "django-lifecycle", specifier = "==1.2.4" },
+    { name = "django-lifecycle", specifier = "==1.2.5" },
     { name = "django-multiselectfield", specifier = "==1.0.1" },
     { name = "django-oauth-toolkit", specifier = "==3.1.0" },
     { name = "django-ordered-model", specifier = "==3.4.3" },
@@ -969,14 +969,14 @@ wheels = [
 
 [[package]]
 name = "django-lifecycle"
-version = "1.2.4"
+version = "1.2.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9c/ac/4e5ce8cb8b2eef726157bbfb6f227e79a4bf8e14d6346b21490b689464fb/django_lifecycle-1.2.4.tar.gz", hash = "sha256:b37add8a95d0e85f9f97e652fac989cd5914cddb2380d933b6568f80238ab61e", size = 12223, upload-time = "2024-06-07T10:40:33.678Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c6/dd/a04915d7be1b37f40f12204e90b67445496c317268faabdd11d21675cc6a/django_lifecycle-1.2.5.tar.gz", hash = "sha256:a6cd14b6eea55d4e7bc9702f7be23b045b1b07a285f1a332067791ed79b5980a", size = 12882, upload-time = "2026-01-25T18:21:51Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ab/31/85dd0766c135e8688d88849fc3d245c783cab435cedfb6d9041a911ee22f/django_lifecycle-1.2.4-py3-none-any.whl", hash = "sha256:b54aea17b50de45adb5c90a06eea0171afa0d547682f51990dffb578b82fc658", size = 15012, upload-time = "2024-06-07T10:40:31.822Z" },
+    { url = "https://files.pythonhosted.org/packages/f5/78/7e4c1002c102d540cf26009f74a69881ec0c90fdf4e085f07be9590d876f/django_lifecycle-1.2.5-py3-none-any.whl", hash = "sha256:5cc5246f3a3373b7355291be045f0cc04d17ed088d33e69539a122fab46086ea", size = 15793, upload-time = "2026-01-25T18:21:50.078Z" },
 ]
 
 [[package]]
@@ -1529,7 +1529,7 @@ requires-dist = [
     { name = "django-extensions", marker = "extra == 'dev'", specifier = ">=3.2.3,<4.0.0" },
     { name = "django-filter", specifier = ">=2.4.0,<2.5.0" },
     { name = "django-health-check", specifier = ">=3.18.2,<3.19.0" },
-    { name = "django-lifecycle", specifier = ">=1.2.4,<1.3.0" },
+    { name = "django-lifecycle", specifier = ">=1.2.5,<1.3.0" },
     { name = "django-oauth-toolkit", specifier = ">=3.0.1,<4.0.0" },
     { name = "django-ordered-model", specifier = ">=3.4.1,<3.5.0" },
     { name = "django-redis", specifier = ">=5.4.0,<6.0.0" },
