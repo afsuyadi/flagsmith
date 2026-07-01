@@ -38,6 +38,9 @@ export const DeleteOrganisation = ({
       'p-0',
     )
   }
+  const isDeleteButtonDisabled =
+    Utils.getPlanName(organisation.subscription?.plan ?? '') !==
+      planNames.free && !organisation.subscription?.cancellation_date
 
   return (
     <>
@@ -54,15 +57,18 @@ export const DeleteOrganisation = ({
           data-test='delete-org-btn'
           onClick={handleDelete}
           theme='danger'
-          disabled={
-            isLoading ||
-            (Utils.getPlanName(organisation.subscription?.plan ?? '') !==
-              planNames.free &&
-              !organisation.subscription?.cancellation_date)
-          }
+          disabled={isLoading || isDeleteButtonDisabled}
         >
           {isLoading ? 'Deleting...' : 'Delete Organisation'}
         </Button>
+        {isDeleteButtonDisabled && (
+          <div className='col-md-7'>
+            <p className='text-danger'>
+              You need to cancel your active subscriptions before deleting your
+              organisation.
+            </p>
+          </div>
+        )}
       </Row>
     </>
   )
